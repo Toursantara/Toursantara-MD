@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/toscagin"
+    tools:context=".login.LoginActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="@color/white"
+        app:cardElevation="30dp"
+        android:background="@drawable/custom_edittext">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="19dp">
+
+            <TextView
+                android:id="@+id/LoginTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/LoginPage"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableStart="@drawable/ic_baseline_person_24"
+                android:drawablePadding="5dp"
+                android:hint="@string/UsernameLogin"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/EditTextPassword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:padding="8dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/custom_edittext"
+                    android:drawablePadding="5dp"
+                    android:inputType="textPassword"
+                    android:hint="@string/PasswordLogin"
+                    android:drawableStart="@drawable/ic_baseline_lock_24"
+                    tools:ignore="SpeakableTextPresentCheck"
+                    android:textColorHighlight="@color/cardview_dark_background"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@color/blue"
+                android:text="@string/ButtonLogin"
+                android:textSize="14sp"
+                app:cornerRadius="15dp" />
+
+            <TextView
+                android:id="@+id/TextButtonSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginTop="1dp"
+                android:textSize="15sp"
+                android:text="@string/TextViewLgin"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/signUpButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@color/grey"
+                android:text="@string/ButtonSignUp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="15dp" />
+
+            <TextView
+                android:id="@+id/TextGoogle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:textSize="15sp"
+                android:text="@string/TextViewLginGoogle"
+                android:textColor="@color/black" />
+
+            <ImageButton
+                android:id="@+id/googleLoginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/google" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
