@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/toscagin"
-    tools:context=".login.LoginActivity">
+    tools:context=".view.login.LoginActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

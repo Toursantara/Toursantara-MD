@@ -1,16 +1,20 @@
+// PlaceAdapter.kt
 package capstone.toursantara.app.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import capstone.toursantara.app.R
-import capstone.toursantara.app.network.model.Places
-import com.bumptech.glide.Glide
+import capstone.toursantara.app.model.Place
 
-class PlaceAdapter(private val placeList: List<Places.PlacesItem>) : RecyclerView.Adapter<PlaceAdapter.PlaceViewHolder>() {
+class PlaceAdapter(private var places: List<Place>) : RecyclerView.Adapter<PlaceAdapter.PlaceViewHolder>() {
+
+    class PlaceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val placeName: TextView = itemView.findViewById(R.id.place_name)
+        val placeDescription: TextView = itemView.findViewById(R.id.place_location)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaceViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_place, parent, false)
@@ -18,28 +22,17 @@ class PlaceAdapter(private val placeList: List<Places.PlacesItem>) : RecyclerVie
     }
 
     override fun onBindViewHolder(holder: PlaceViewHolder, position: Int) {
-        val place = placeList[position]
-        holder.placeName.text = place.placeName
-        holder.placePrice.text = "Rp.${place.price}"
-        holder.placeLocation.text = place.city
-        holder.placeRating.text = place.rating.toString()
-
-        // Load image using Glide or any other image loading library
-        Glide.with(holder.itemView.context)
-            .load("https://via.placeholder.com/150") // Replace with actual image URL if available
-            .into(holder.placeImage)
+        val place = places[position]
+        holder.placeName.text = place.name
+        holder.placeDescription.text = place.description
     }
 
     override fun getItemCount(): Int {
-        return placeList.size
+        return places.size
     }
 
-    class PlaceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val placeImage: ImageView = itemView.findViewById(R.id.place_image)
-        val placeName: TextView = itemView.findViewById(R.id.place_name)
-        val placePrice: TextView = itemView.findViewById(R.id.place_price)
-        val placeLocation: TextView = itemView.findViewById(R.id.place_location)
-        val placeRating: TextView = itemView.findViewById(R.id.place_rating)
-
+    fun updatePlaces(newPlaces: List<Place>) {
+        places = newPlaces
+        notifyDataSetChanged()
     }
 }

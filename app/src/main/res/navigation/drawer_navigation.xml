@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="capstone.toursantara.app.fragment.HomeFragment"
+        android:name="capstone.toursantara.app.view.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_bookmarks"
-        android:name="capstone.toursantara.app.fragment.BookmarksFragment"
+        android:name="capstone.toursantara.app.view.boomarks.BookmarksFragment"
         android:label="Bookmarks"
         tools:layout="@layout/fragment_bookmarks" />
 

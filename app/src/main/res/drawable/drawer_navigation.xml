@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="capstone.toursantara.app.fragment.HomeFragment"
+        android:name="capstone.toursantara.app.view.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
 

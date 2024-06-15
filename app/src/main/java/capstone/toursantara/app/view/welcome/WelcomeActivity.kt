@@ -1,12 +1,12 @@
-package capstone.toursantara.app.welcome
+package capstone.toursantara.app.view.welcome
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import capstone.toursantara.app.login.LoginActivity
+import capstone.toursantara.app.view.login.LoginActivity
 import capstone.toursantara.app.R
-import capstone.toursantara.app.register.SignUpActivity
+import capstone.toursantara.app.view.register.SignUpActivity
 
 class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

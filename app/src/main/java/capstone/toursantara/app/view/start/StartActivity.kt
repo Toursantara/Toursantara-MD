@@ -1,11 +1,11 @@
-package capstone.toursantara.app.start
+package capstone.toursantara.app.view.start
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import capstone.toursantara.app.R
-import capstone.toursantara.app.welcome.WelcomeActivity
+import capstone.toursantara.app.view.welcome.WelcomeActivity
 
 class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

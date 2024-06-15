@@ -1,4 +1,4 @@
-package capstone.toursantara.app
+package capstone.toursantara.app.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -8,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import capstone.toursantara.app.R
 import capstone.toursantara.app.databinding.ActivityMainBinding
 
 

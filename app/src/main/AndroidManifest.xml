@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".Application"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,19 +18,19 @@
         android:theme="@style/Theme.Toursantara"
         tools:targetApi="31">
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".view.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".welcome.WelcomeActivity"
+            android:name=".view.welcome.WelcomeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true"/>
         <activity
-            android:name=".register.SignUpActivity"
+            android:name=".view.register.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".start.StartActivity"
+            android:name=".view.start.StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

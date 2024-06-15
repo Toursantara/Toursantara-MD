@@ -1,4 +1,4 @@
-package capstone.toursantara.app.register
+package capstone.toursantara.app.view.register
 
 import android.os.Bundle
 import android.util.Log

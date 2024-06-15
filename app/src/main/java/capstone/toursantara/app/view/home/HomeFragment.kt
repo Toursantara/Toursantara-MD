@@ -1,32 +1,29 @@
-package capstone.toursantara.app.fragment
+// HomeFragment.kt
+package capstone.toursantara.app.view.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.constraintlayout.helper.widget.Carousel
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import capstone.toursantara.app.R
 import capstone.toursantara.app.adapter.CarouselPriceRangeAdapter
-import capstone.toursantara.app.adapter.Category
 import capstone.toursantara.app.adapter.CategoryAdapter
 import capstone.toursantara.app.adapter.PlaceAdapter
-import capstone.toursantara.app.network.api.ApiClient
-import capstone.toursantara.app.network.api.ApiClient.apiService
-import capstone.toursantara.app.network.api.ApiService
-import capstone.toursantara.app.network.model.Places
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-
+import capstone.toursantara.app.model.Category
+import capstone.toursantara.app.viewmodel.PlacesViewModel
+import capstone.toursantara.app.viewmodel.PlacesViewModelFactory
 
 class HomeFragment : Fragment() {
 
     private lateinit var rvPlaces: RecyclerView
+    private lateinit var placeAdapter: PlaceAdapter
+    private val placesViewModel: PlacesViewModel by viewModels { PlacesViewModelFactory() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,27 +63,12 @@ class HomeFragment : Fragment() {
         // Set up the places RecyclerView
         rvPlaces = view.findViewById(R.id.rv_places)
         rvPlaces.layoutManager = LinearLayoutManager(context)
+        placeAdapter = PlaceAdapter(emptyList())
+        rvPlaces.adapter = placeAdapter
 
-        fetchPlaces()
-    }
-
-    private fun fetchPlaces() {
-        apiService.getPlaces().enqueue(object : Callback<ArrayList<Places.PlacesItem>> {
-            override fun onResponse(call: Call<ArrayList<Places.PlacesItem>>, response: Response<ArrayList<Places.PlacesItem>>) {
-                if (response.isSuccessful) {
-                    val places = response.body() ?: emptyList()
-                    rvPlaces.adapter = PlaceAdapter(places)
-                    Log.d("HomeFragment", "Places loaded: ${places.size}")
-                } else {
-                    Toast.makeText(context, "Failed to load places", Toast.LENGTH_SHORT).show()
-                    Log.e("HomeFragment", "Failed to load places: ${response.errorBody()?.string()}")
-                }
-            }
-
-            override fun onFailure(call: Call<ArrayList<Places.PlacesItem>>, t: Throwable) {
-                Toast.makeText(context, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
-                Log.e("HomeFragment", "Error: ${t.message}", t)
-            }
+        // Observe data from ViewModel
+        placesViewModel.fetchAllPlaces().observe(viewLifecycleOwner, Observer { places ->
+            placeAdapter.updatePlaces(places)
         })
     }
 

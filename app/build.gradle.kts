@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("kotlin-parcelize")
+    id("com.google.gms.google-services") version "4.3.10" apply false
 }
 
 android {
@@ -52,7 +55,10 @@ dependencies {
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.preference.ktx)
     implementation(libs.androidx.media3.common)
+    implementation(libs.firebase.database.ktx)
+    implementation(libs.firebase.ml.common)
     testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.circleimageview)
@@ -69,4 +75,18 @@ dependencies {
 
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
+
+    implementation ("androidx.viewpager2:viewpager2:1.0.0")
+
+    // Import the BoM for the Firebase platform
+    implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
+
+    // Add the dependency for the Firebase ML model downloader library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-ml-modeldownloader-ktx")
+    implementation("com.google.firebase:firebase-database:20.0.3")
+    // Also add the dependency for the TensorFlow Lite library and specify its version
+    implementation("org.tensorflow:tensorflow-lite:2.3.0")
+
 }
