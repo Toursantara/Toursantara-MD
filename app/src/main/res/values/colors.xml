@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary_300">#218282</color>
+    <color name="primary_500">#3EA5A5</color>
+    <color name="primary_550">#71BFBF</color>
+    <color name="primary_700">#98DADA</color>
+
+    <color name="blue">#218282</color>
+    <color name="red">#FF0000</color>
+    <color name="yellow">#CDDC39</color>
+    <color name="ggrry">#C9D5D5</color>
+    <color name="coklat">#171719</color>
+    <color name="grey">#33C3C3</color>
+    <color name="brokenwhite">#F8F6E3</color>
+    <color name="bludark">#164863</color>
+    <color name="blugrey">#427D9D</color>
+    <color name="bluwhite">#9BBEC8</color>
+    <color name="whitebul">#CBE4DE</color>
+
+    <color name="light_200">#F0F6FF</color>
+    <color name="light_400">#BFC8D2</color>
+
+    <color name="neutral_500">#526983</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="primary_text">#17212B</color>
+    <color name="secondary_text">#526983</color>
+    <color name="bg">#F6F6F6</color>
+
+    //button//
+    <color name="default_button_color">@color/grey</color>
+    <color name="transparent">#80FFFFFF</color>
+
+
+
+
+</resources>
